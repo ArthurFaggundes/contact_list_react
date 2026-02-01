@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit' // PayloadAction é um tipo genérico fornecido pelo Redux Toolkit que representa a ação com um payload tipado //* payload é a carga útil da ação, ou seja, os dados que estão sendo enviados com a ação
 import Task from '../../models/ContactModel' // Importa o modelo Task para tipar o estado inicial e as ações relacionadas às tarefas
-import * as enums from '../../utils/enums/Task' // Importa os enums para definir os estados e prioridades das tarefas
 
 type TaskState = {
   itens: Task[] // Define que o estado das tarefas é um array de objetos do tipo Task

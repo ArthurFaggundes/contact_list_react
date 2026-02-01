@@ -1,10 +1,10 @@
 class ContactModel {
   fullName: string
   mail: string
-  cellNumber: number
+  cellNumber: string
   id: number
 
-  constructor(fullName: string, mail: string, cellNumber: number, id: number) {
+  constructor(fullName: string, mail: string, cellNumber: string, id: number) {
     this.fullName = fullName
     this.mail = mail
     this.cellNumber = cellNumber

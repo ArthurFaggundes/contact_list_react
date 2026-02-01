@@ -6,7 +6,7 @@ import filterReducer from './reducers/filter' // Importa o reducer de filtro par
 
 const store = configureStore({
   reducer: {
-    tasks: tasksReducer, // Adiciona o reducer de tarefas à store sob a chave 'tasks'
+    contact: contactReducer, // Adiciona o reducer de tarefas à store sob a chave 'tasks'
     filter: filterReducer // Adiciona o reducer de filtro à store sob a chave 'filter'
   }
 })
