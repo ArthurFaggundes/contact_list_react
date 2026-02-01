@@ -1,10 +1,10 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, SetStateAction, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import * as S from './styles'
 
-import { removeTask, editTask, changeStatus } from '../../store/reducers/tasks'
-import { Button, SaveButton } from '../../styles'
+import { removeTask, editTask, changeStatus } from '../../store/reducers/tasks' // funções de manipulação
+import { Button, SaveButton } from '../../styles' // componentes estilizados
 import ContactModel from '../../models/ContactModel'
 
 type Props = ContactModel
@@ -15,7 +15,7 @@ const Contact = ({
   cellNumber: originalCellNumber,
   id
 }: Props) => {
-  // declaração de estados e dispatch
+  // ================================================================== declaração de estados e dispatch
 
   const dispatch = useDispatch()
   const [isEditing, setIsEditing] = useState(false)
@@ -24,7 +24,7 @@ const Contact = ({
   const [mail, setMail] = useState('')
   const [cellNumber, setCellNumber] = useState('')
 
-  // funções de manipulação de dados
+  // ================================================================== funções de manipulação de dados
 
   useEffect(() => {
     if (originalFullName.length > 0) {
@@ -44,6 +44,8 @@ const Contact = ({
     }
   }, [originalCellNumber])
 
+  // ================================================================== função para cancelar edição e transformar valores em originais
+
   function cancelEditing() {
     setIsEditing(false)
     setfullName(originalFullName)
@@ -51,55 +53,76 @@ const Contact = ({
     setCellNumber(originalCellNumber.toString())
   }
 
-  function changeTaskStatus(e: ChangeEvent<HTMLInputElement>) {
-    dispatch(
-      changeStatus({
-        Id: id,
-        Done: e.target.checked
-      })
-    )
+  // ================================================================== função para verificar se os inputs são válidos
+
+  const checkInputs = () => {
+    if (!fullName.trim()) return false
+    if (!mail.includes('@')) return false
+
+    const CellNumberRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/
+    if (!CellNumberRegex.test(cellNumber)) return false
+
+    return true
+  }
+
+  // ================================================================== função para formatar/marcarar o número de celular
+
+  const handleCellNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
+    let numberVar = e.target.value.replace(/\D/g, '') // remove tudo que não é número
+    if (numberVar.length > 11) numberVar = numberVar.slice(0, 11) // limite de 11 dígitos
+
+    // Aplica máscara (xx) x xxxx-xxxx
+    numberVar = numberVar.replace(/^(\d{2})(\d)/, '($1) $2') // DDD + primeiro dígito
+    numberVar = numberVar.replace(/(\d)(\d{4})$/, '$1-$2') // adiciona hífen antes dos últimos 4 dígitos
+
+    setCellNumber(numberVar)
   }
 
   return (
     <S.Card>
-      <label htmlFor={title}>
-        <input
-          type="checkbox"
-          id={title}
-          checked={Status === enums.Status.DONE}
-          onChange={changeTaskStatus}
-        />{' '}
-        {/* Status === enums.Status.DONE vai estar marcado quando estiver como Stutus = Done */}
-        <S.Title>
-          {isEditing && <em>Editing: </em>}
-          {/* se for True mostra texto, basicamente*/}
-          {title}
-        </S.Title>
-      </label>
-      <S.Tag param="priority" priority={priority}>
-        {priority}
-      </S.Tag>
-      <S.Tag param="status" status={Status}>
-        {Status}
-      </S.Tag>
-      <S.Description
+      <S.FullNameInput
+        as="input"
+        type="text"
+        placeholder="Nome"
+        value={fullName}
+        onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+          setfullName(evento.target.value)
+        }
+      >
+        {isEditing && <em>Editing: </em>}
+        {fullName}
+      </S.FullNameInput>
+      <S.InfoInput
         disabled={!isEditing}
-        value={description}
-        onChange={(event) => setDescription(event.target.value)} // para atualizar a descrição enquanto edita
-        placeholder="Task description..."
+        type="mail"
+        value={mail}
+        placeholder="Mail Adress"
+        onChange={(e: { target: { value: SetStateAction<string> } }) =>
+          setMail(e.target.value)
+        }
+      />
+      <S.InfoInput
+        disabled={!isEditing}
+        type="tel"
+        value={cellNumber}
+        placeholder="Cellphone Number"
+        onChange={handleCellNumberChange}
       />
       <S.ActionBar>
         {isEditing ? (
           <>
             <SaveButton
               onClick={() => {
+                if (!checkInputs()) {
+                  alert('Please fill in all fields correctly!')
+                  return
+                }
                 dispatch(
-                  editTask({
-                    Title: title,
-                    Status,
-                    Priority: priority,
-                    Description: description,
-                    Id: id
+                  editContact({
+                    id,
+                    fullName,
+                    mail,
+                    cellNumber
                   })
                 )
                 setIsEditing(false)
