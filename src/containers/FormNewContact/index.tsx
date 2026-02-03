@@ -10,7 +10,7 @@ import {
   Title,
   InfoInput
 } from '../../styles/index'
-import { FormContainer } from './styles'
+import { ButtonsContainer, FormContainer } from './styles'
 
 const FormNewContact = () => {
   const dispatch = useDispatch()
@@ -60,8 +60,8 @@ const FormNewContact = () => {
   return (
     <>
       <MainContainer>
-        <Title>New Contact</Title>
         <FormContainer onSubmit={newContact}>
+          <Title>New Contact</Title>
           <InfoInput
             value={fullName}
             onChange={(e) => setfullName(e.target.value)}
@@ -80,8 +80,10 @@ const FormNewContact = () => {
             placeholder="(00) 00000-0000"
             type="tel"
           />
-          <SaveButton type="submit">Save</SaveButton>
-          <ReturnButton onClick={() => navigate(-1)}>Voltar</ReturnButton>
+          <ButtonsContainer>
+            <SaveButton type="submit">Save</SaveButton>
+            <ReturnButton onClick={() => navigate(-1)}>Voltar</ReturnButton>
+          </ButtonsContainer>
         </FormContainer>
       </MainContainer>
     </>

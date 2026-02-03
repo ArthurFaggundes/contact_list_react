@@ -11,21 +11,24 @@ export const Container = styled.div`
 export const MainContainer = styled.main`
   background-color: #130f40;
   padding: 40px 40px;
-  height: 100vh; // barra de rolagem só vai ter no main
-  overflow-y: scroll;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 `
 
 export const Title = styled.h2`
+  color: ${colors.gray};
   margin: 40px 0;
   font-size: 18px;
   font-weight: bold;
-  color: ${colors.gray};
+  justify-content: center;
+  display: flex;
 `
 
 export const InfoInput = styled.input`
   background-color: #fff;
   color: #666;
-  border-color: #666;
+  border: 0;
   border-radius: 8px;
   font-weight: bold;
   padding: 8px;

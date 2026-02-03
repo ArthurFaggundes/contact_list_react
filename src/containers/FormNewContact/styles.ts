@@ -5,26 +5,15 @@ export const FormContainer = styled.form`
   width: 100%;
   font-weight: bold;
   font-size: 14px;
+  display: block;
+  margin-bottom: 350px;
 
-  textarea {
-    resize: none;
-    margin: 16px 0;
+  button {
+    width: 100px;
   }
 `
 
-export const OptionsContainer = styled.div`
-  margin-bottom: 16px;
-
-  p {
-    margin-bottom: 6px;
-  }
-
-  label {
-    margin-right: 6px;
-  }
-`
-
-export const Option = styled.div`
-  display: inline;
-  text-transform: capitalize;
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `

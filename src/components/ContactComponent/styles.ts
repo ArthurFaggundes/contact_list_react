@@ -9,6 +9,7 @@ export const Card = styled.div`
   padding: 16px;
   margin-bottom: 32px;
   border-radius: 16px;
+  width: 500px;
 
   label {
     display: flex;
