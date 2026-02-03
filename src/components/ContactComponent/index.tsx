@@ -83,8 +83,9 @@ const ContactComponent = ({
       <S.FullNameInput
         as="input"
         type="text"
-        placeholder="Nome"
+        placeholder="Name"
         value={fullName}
+        disabled={!isEditing}
         onChange={(evento: ChangeEvent<HTMLInputElement>) =>
           setfullName(evento.target.value)
         }

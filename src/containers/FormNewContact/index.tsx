@@ -82,7 +82,7 @@ const FormNewContact = () => {
           />
           <ButtonsContainer>
             <SaveButton type="submit">Save</SaveButton>
-            <ReturnButton onClick={() => navigate(-1)}>Voltar</ReturnButton>
+            <ReturnButton onClick={() => navigate('/')}>Voltar</ReturnButton>
           </ButtonsContainer>
         </FormContainer>
       </MainContainer>

@@ -20,10 +20,16 @@ const initialState: ContactState = {
       id: 2
     },
     {
-      fullName: 'Maria A',
+      fullName: 'Maria Andrade',
       mail: 'maria.ajm@gmail.com',
-      cellNumber: '(54) 92837-0192',
+      cellNumber: '(51) 92837-0192',
       id: 3
+    },
+    {
+      fullName: 'Arthur Fagundes',
+      mail: 'arthurhfagundes6@gmail.com',
+      cellNumber: '(84) 90202-0202',
+      id: 4
     }
   ]
 }

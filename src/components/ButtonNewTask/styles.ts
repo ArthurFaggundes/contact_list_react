@@ -17,4 +17,9 @@ export const Circle = styled(Link)`
   font-size: 40px;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    transition: all 0.1s ease;
+    transform: translateY(-2px) scale(1.05);
+  }
 `
