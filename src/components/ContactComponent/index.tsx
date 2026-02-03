@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux'
 
 import * as S from './styles'
 
-import { removeTask, editTask, changeStatus } from '../../store/reducers/tasks' // funções de manipulação
+import { removeContact, editContact } from '../../store/reducers/contactSlice' // funções de manipulação
 import { Button, SaveButton } from '../../styles' // componentes estilizados
 import ContactModel from '../../models/ContactModel'
 
 type Props = ContactModel
 
-const Contact = ({
+const ContactComponent = ({
   fullName: originalFullName,
   mail: originalMail,
   cellNumber: originalCellNumber,
@@ -39,8 +39,8 @@ const Contact = ({
   }, [originalMail])
 
   useEffect(() => {
-    if (originalCellNumber > 0) {
-      setCellNumber(originalCellNumber.toString()) //! depois verificar se é assim que converte number para string
+    if (originalCellNumber.length > 0) {
+      setCellNumber(originalCellNumber)
     }
   }, [originalCellNumber])
 
@@ -88,10 +88,7 @@ const Contact = ({
         onChange={(evento: ChangeEvent<HTMLInputElement>) =>
           setfullName(evento.target.value)
         }
-      >
-        {isEditing && <em>Editing: </em>}
-        {fullName}
-      </S.FullNameInput>
+      />
       <S.InfoInput
         disabled={!isEditing}
         type="mail"
@@ -135,7 +132,7 @@ const Contact = ({
         ) : (
           <>
             <Button onClick={() => setIsEditing(true)}>Edit</Button>
-            <S.RemoveButton onClick={() => dispatch(removeTask(id))}>
+            <S.RemoveButton onClick={() => dispatch(removeContact(id))}>
               Delete
             </S.RemoveButton>
           </>
@@ -145,4 +142,4 @@ const Contact = ({
   )
 }
 
-export default Contact
+export default ContactComponent

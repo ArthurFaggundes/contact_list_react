@@ -2,13 +2,13 @@ import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { addNewTask } from '../../store/reducers/tasks' // importando função
+import { addNewContact } from '../../store/reducers/contactSlice' // importando função
 import {
   MainContainer,
   ReturnButton,
   SaveButton,
   Title,
-  SearchInput
+  InfoInput
 } from '../../styles/index'
 import { FormContainer } from './styles'
 
@@ -20,7 +20,7 @@ const FormNewContact = () => {
   const [mail, setMail] = useState('')
   const [cellNumber, setCellNumber] = useState('')
 
-  const addNewContact = (e: FormEvent) => {
+  const newContact = (e: FormEvent) => {
     e.preventDefault()
 
     const validFullName = fullName.trim().length > 0
@@ -33,7 +33,7 @@ const FormNewContact = () => {
     }
 
     dispatch(
-      addNewTask({
+      addNewContact({
         fullName,
         mail,
         cellNumber
@@ -61,20 +61,20 @@ const FormNewContact = () => {
     <>
       <MainContainer>
         <Title>New Contact</Title>
-        <FormContainer onSubmit={addNewContact}>
-          <SearchInput
+        <FormContainer onSubmit={newContact}>
+          <InfoInput
             value={fullName}
             onChange={(e) => setfullName(e.target.value)}
             placeholder="Insert your full name"
             type="text"
           />
-          <SearchInput
+          <InfoInput
             value={mail}
             onChange={(e) => setMail(e.target.value)}
             placeholder="exemple@gmail.com"
             type="mail"
           />
-          <SearchInput
+          <InfoInput
             value={cellNumber}
             onChange={(e) => setCellNumber(formatCellNumber(e.target.value))}
             placeholder="(00) 00000-0000"

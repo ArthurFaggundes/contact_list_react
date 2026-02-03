@@ -6,11 +6,11 @@ const GlobalStyle = createGlobalStyle`
   ul { list-style: none; }
 `
 export const Container = styled.div`
-  display: grid;
   grid-template-columns: 224px auto;
 `
 export const MainContainer = styled.main`
-  padding: 0 40px;
+  background-color: #130f40;
+  padding: 40px 40px;
   height: 100vh; // barra de rolagem só vai ter no main
   overflow-y: scroll;
 `
@@ -19,16 +19,18 @@ export const Title = styled.h2`
   margin: 40px 0;
   font-size: 18px;
   font-weight: bold;
+  color: ${colors.gray};
 `
 
-export const SearchInput = styled.input`
-  border-radius: 8px;
-  font-weight: 400;
-  padding: 8px;
+export const InfoInput = styled.input`
   background-color: #fff;
   color: #666;
   border-color: #666;
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 8px;
   width: 100%;
+  margin-bottom: 16px;
 `
 
 export const Button = styled.button`
@@ -43,19 +45,23 @@ export const Button = styled.button`
   margin-right: 8px;
 `
 
-export const ReturnButton = styled.button`
+export const ReturnButton = styled(Button)`
   color: #fff;
   background-color: ${colors.darkGray};
   border-radius: 8px;
   border: none;
-  font-weight: 400;
+  font-weight: bold;
   padding: 8px;
-  width: 100%;
   cursor: pointer;
 `
 
 export const SaveButton = styled(Button)`
   background-color: ${colors.green};
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  padding: 8px;
+  cursor: pointer;
 `
 
 export default GlobalStyle

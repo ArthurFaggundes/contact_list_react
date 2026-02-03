@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const FormContainer = styled.form`
-  color: #535c68;
   max-width: 547px;
   width: 100%;
   font-weight: bold;

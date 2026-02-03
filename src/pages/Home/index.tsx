@@ -1,9 +1,9 @@
 import ContactListContainer from '../../containers/ContactListContainer'
-import ButtonNewTask from '../../components/ButtonNewTask'
+import ButtonNewContact from '../../components/ButtonNewTask'
 
 export const Home = () => (
   <>
     <ContactListContainer />
-    <ButtonNewTask />
+    <ButtonNewContact />
   </>
 )

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import tasksReducer from './reducers/tasks' // Importa o reducer de tarefas para ser incluído na configuração da store
 import filterReducer from './reducers/filter' // Importa o reducer de filtro para ser incluído na configuração da store
+import contactReducer from './reducers/contactSlice' // Importa o reducer de tarefas para ser incluído na configuração da store
 
 // ============================================================= store:
 

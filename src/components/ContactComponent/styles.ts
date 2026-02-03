@@ -23,8 +23,10 @@ export const Card = styled.div`
 `
 
 export const FullNameInput = styled.h3`
+  background-color: transparent;
   font-size: 18px;
   font-weight: bold;
+  border: none;
 `
 
 export const InfoInput = styled.input`
