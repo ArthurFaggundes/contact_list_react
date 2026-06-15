@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+# ENGLISH VERSION (🇺🇸)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📌 Contact List 
 
-## Available Scripts
+Responsive contact management application developed with React, focused on practicing component architecture, state management, CRUD operations, and user interaction.
 
-In the project directory, you can run:
+🌐 Live Demo:
+[Project Website](https://contact-list-react-kappa.vercel.app/)
 
-### `npm start`
+## 📖 About the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project was developed during my React studies with the goal of practicing fundamental Front-End concepts and building a dynamic application capable of managing contact information.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+React CRUD Application that allows users to create, edit, view, and remove contacts through an intuitive interface, simulating features commonly found in real-world contact management systems.
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Add new contacts.
+* Edit existing contacts.
+* Remove contacts from the list.
+* View and organize registered contacts.
+* Dynamic updates without page refresh.
+* Responsive and user-friendly interface.
+* State management using React.
 
-### `npm run build`
+## 🛠️ Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Front-End:
+    - React
+    - JavaScript
+    - HTML5
+    - CSS3
+      
+- Tools:
+    - GitHub
+    - Vercel
+    - Vite
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎯 Purpose
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was created to:
 
-### `npm run eject`
+* Practice React fundamentals;
+* Learn and apply CRUD operations;
+* Improve state management skills;
+* Build interactive user interfaces;
+* Strengthen modern JavaScript knowledge.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 📄 License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project was developed for educational and professional portfolio purposes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## VERSÃO EM PORTUGUÊS (🇧🇷)
 
-## Learn More
+# 📌 Lista de Contatos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Aplicação responsiva de gerenciamento de contatos desenvolvida com React, com foco na prática de componentização, gerenciamento de estado, operações CRUD e interação com o usuário.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🌐 Acesse o projeto:
+[Project Website](https://contact-list-react-kappa.vercel.app/)
+
+## 📖 Sobre o Projeto
+
+Este projeto foi desenvolvido durante meus estudos de React com o objetivo de praticar conceitos fundamentais de Front-End e construir uma aplicação dinâmica capaz de gerenciar informações de contatos.
+
+A aplicação estilo React CRUD permite cadastrar, editar, visualizar e remover contatos por meio de uma interface intuitiva, simulando funcionalidades presentes em sistemas reais de gerenciamento de contatos.
+
+## ✨ Funcionalidades
+
+* Cadastro de novos contatos.
+* Edição de contatos existentes.
+* Remoção de contatos da lista.
+* Visualização e organização dos contatos cadastrados.
+* Atualização dinâmica sem recarregamento da página.
+* Interface responsiva e intuitiva.
+* Gerenciamento de estado utilizando React.
+
+## 🛠️ Tecnologias Utilizadas
+
+- Front-End:
+    - React
+    - JavaScript
+    - HTML5
+    - CSS3
+      
+- Ferramentas:
+    - GitHub
+    - Vercel
+    - Vite
+
+## 🎯 Objetivo
+
+Este projeto foi criado para:
+
+* Praticar os fundamentos do React;
+* Aprender e aplicar operações CRUD;
+* Aprimorar conhecimentos em gerenciamento de estado;
+* Desenvolver interfaces interativas;
+* Fortalecer habilidades em JavaScript moderno.
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins de estudo e demonstração profissional.
